@@ -14,6 +14,12 @@ export class AppComponent implements AfterViewInit{
 
   message:string;
 
+  //two way binding
+  userName:string = "";
+
+  //class binding (h1) and style binding (p)
+  boolClass:boolean = true;
+
   constructor() {
     console.log(this.childComp);
    }
@@ -25,5 +31,21 @@ export class AppComponent implements AfterViewInit{
 
   receiveMessage($event) {
     this.message = $event;
+  }
+
+  onClick() {
+    this.boolClass = !this.boolClass;
+  }
+
+  onKeyUp($event) {
+    console.log($event.target.value);
+  }
+
+  onKeyUpVariable(value:string){
+    console.log(value);
+  }
+
+  onKeyUpTwoWayBinding() {
+    console.log(this.userName);
   }
 }
