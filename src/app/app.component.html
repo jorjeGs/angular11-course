@@ -1,20 +1,10 @@
-<h1 [class.redColor] = 'boolClass'>Angular App</h1>
-<p [style.color] = "boolClass ? 'red' : 'black'" >{{message}}</p>
-
-<!-- Event Binding-->
-<button (click) = "onClick()">Click Me</button>
-
-<!-- Event Filtering -->
-<input type="text" (keyup.enter) = "onKeyUp($event)">
-
-<!-- Template Variable -->
-<input type="text" (keyup.enter) = "onKeyUpVariable(myInput.value)" #myInput>
-
-<!-- One way Binding -->
-<input type="text" [value] = "userName">
-
-<!-- Two Way Binding -->
-<input type="text" [(ngModel)] = "userName" (keyup.enter) = " onKeyUpTwoWayBinding()">
-
-<app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
+<h1>Post Form</h1>
+<hr>
+<app-postform (formEvent)="receiveForm($event)"></app-postform>
+<hr>
+<section class="form-result" [style.display]='showForm ? "flex" : "none"'>
+    <h2>{{title}}</h2>
+    <h3>{{details}}</h3>
+    <img [src]="imageurl" alt="Post Image">
+    <a [href]="link" [class.bgyellow]="boolBgColor">Post Link</a>
+</section>

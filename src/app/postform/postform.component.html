@@ -1,0 +1,27 @@
+<section>
+    <form class="form">
+        <div class="form-title">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" (keyup)="sendForm()">
+        </div>
+        <div class="form-details">
+            <label for="details" id="details">Details</label>
+            <textarea name="details" id="details" placeholder="Post details" [(ngModel)]="details" [ngModelOptions]="{standalone: true}" (keyup)="sendForm()"></textarea>
+        </div>
+        <div class="form-imageurl">
+            <label for="imageurl">Image URL</label>
+            <input type="text" id="imageurl" placeholder="Image URL" [(ngModel)]="imageurl" [ngModelOptions]="{standalone: true}" (keyup)="sendForm()">
+        </div>
+        <div class="form-link">
+            <label for="link">Link</label>
+            <input type="text" id="link" placeholder="Link" [(ngModel)]="link" [ngModelOptions]="{standalone: true}" (keyup)="sendForm()">
+        </div>
+        <div class="form-check-add-bg">
+            <input type="checkbox" id="add-bg" [checked]="boolBgColor" (change)="boolBgColor = !boolBgColor" (change)="sendForm()">
+            <label for="add-bg">Add Background</label>
+        </div>
+        <div class="form-submit">
+            <button type="submit" (click)="test()" >ConsoleLog Data</button>
+        </div>
+    </form>
+</section>
