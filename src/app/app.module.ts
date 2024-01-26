@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { PostlistComponent } from './postlist/postlist.component';
 import { PostformComponent } from './postform/postform.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { DirectiveTaskComponent } from './directive-task/directive-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DirectivesComponent } from './directives/directives.component';
     PostComponent,
     PostlistComponent,
     PostformComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    DirectiveTaskComponent
   ],
   imports: [
     BrowserModule,
