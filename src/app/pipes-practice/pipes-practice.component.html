@@ -1,0 +1,27 @@
+<!-- Uppercase/lowercase pipline  -->
+<h1>{{title | uppercase}}</h1>
+
+<!-- number or decimal pipe  -->
+<h2>{{count | number }}</h2>
+<h2>{{decValue | number: '1.2-2' }}</h2>
+
+<!-- currency pipe (search for currency code) -->
+<h2>{{price | currency: "USD": false: '1.2-2' }}</h2>
+
+<!-- date pipe (search for date pipe angular) -->
+<h2>{{today | date: 'shortDate' }}</h2>
+
+<!-- json pipe -->
+<h2>{{objVal | json }}</h2>
+
+<!-- percent pipe -->
+<h2>{{ 5 | percent: '1.2-2' }}</h2>
+
+<!-- slice pipe -->
+<h2>{{ postArray | slice: 0:2 }}</h2>
+
+<!-- custom pipe from scratch -->
+<h2>{{objVal.age | appendCLI}}</h2>
+
+<!-- custom pipe from CLI with parameter  -->
+<p>{{dummyText | summary: 11}}</p>

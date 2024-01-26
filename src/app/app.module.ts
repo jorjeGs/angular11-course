@@ -10,6 +10,9 @@ import { PostlistComponent } from './postlist/postlist.component';
 import { PostformComponent } from './postform/postform.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { DirectiveTaskComponent } from './directive-task/directive-task.component';
+import { PipesPracticeComponent } from './pipes-practice/pipes-practice.component';
+import { AppendCLIPipe } from './Pipes/append-cli.pipe';
+import { SummaryPipe } from './Pipes/summary.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { DirectiveTaskComponent } from './directive-task/directive-task.componen
     PostlistComponent,
     PostformComponent,
     DirectivesComponent,
-    DirectiveTaskComponent
+    DirectiveTaskComponent,
+    PipesPracticeComponent,
+    AppendCLIPipe,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,
