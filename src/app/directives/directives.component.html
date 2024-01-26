@@ -1,0 +1,60 @@
+<h1>Angular Directives</h1>
+
+<h2>ngIf Directive (conditional rendering)</h2>
+
+<button (click)="addNew()">Add new data</button>
+
+<!-- ng-template for ngIf directive -->
+
+<div *ngIf='objArray.length > 0; then postList else noData'></div>
+
+<ng-template #postList>
+    <h2>ngFor Directive Destructuring an Object Array</h2>
+    <p>using ngtemplate</p>
+    <ul>
+        <li *ngFor="let post of objArray; let i = index">{{i + 1}} {{ post.postTitle }} <button (click)="onDelete(i)">Delete</button></li>
+    </ul>
+</ng-template>
+
+<ng-template #noData>
+    <h2>No data found</h2>
+    <p>using ng-template</p>
+</ng-template>
+
+<h2>ngSwtich Directive Example</h2>
+<div>
+    <button (click)="onClick('step 1')">Step 1</button>
+    <button (click)="onClick('step 2')">Step 2</button>
+    <button (click)="onClick('step 3')">Step 3</button>
+</div>
+
+<div [ngSwitch]="stepForm">
+    <div *ngSwitchCase="'step 1'">
+        <h2>Step 1</h2>
+        <p>Step 1 content</p>
+    </div>
+    <div *ngSwitchCase="'step 2'">
+        <h2>Step 2</h2>
+        <p>Step 2 content</p>
+    </div>
+    <div *ngSwitchCase="'step 3'">
+        <h2>Step 3</h2>
+        <p>Step 3 content</p>
+    </div>
+    <div *ngSwitchDefault>
+        <h2>Default Step</h2>
+        <p>Default Step content</p>
+    </div>
+</div>
+
+<h2><span [ngStyle]="{
+    color: styling ? 'red' : 'black',
+    backgroundColor: styling ? 'blue' : 'white'
+
+}">NgStyle Directive</span></h2>
+
+<h2><span [ngClass]="{
+    'redColor': styling
+}">NgClass Directive</span></h2>
+
+<button (click)="onStyle()">Change Style</button>

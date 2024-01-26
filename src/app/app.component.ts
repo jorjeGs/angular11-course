@@ -22,14 +22,6 @@ export class AppComponent implements AfterViewInit{
   // //class binding (h1) and style binding (p)
   // boolClass:boolean = true;
 
-  constructor() {
-    
-   }
-
-  ngAfterViewInit() {
-    
-  }
-
   // receiveMessage($event) {
   //   this.message = $event;
   // }
@@ -51,25 +43,34 @@ export class AppComponent implements AfterViewInit{
   // }
 
   //EXERCISE 1
-  title = "Title";
-  details = "Details";
-  imageurl = "Image URL";
-  link = "Link";
-  boolBgColor = false;
-  showForm = false;
+  // title = "Title";
+  // details = "Details";
+  // imageurl = "Image URL";
+  // link = "Link";
+  // boolBgColor = false;
+  // showForm = false;
 
-  receiveForm($event) {
-    //we are receiving an object with the data
-    //we need to update the variables
-    if($event.title == "" && $event.details == "" && $event.imageurl == "" && $event.link == ""){
-      this.showForm = false;
-      return;
-    }
-    this.showForm = true;
-    this.title = $event.title;
-    this.details = $event.details;
-    this.imageurl = $event.imageurl;
-    this.link = $event.link;
-    this.boolBgColor = $event.boolBgColor;
+  // receiveForm($event) {
+  //   //we are receiving an object with the data
+  //   //we need to update the variables
+  //   if($event.title == "" && $event.details == "" && $event.imageurl == "" && $event.link == ""){
+  //     this.showForm = false;
+  //     return;
+  //   }
+  //   this.showForm = true;
+  //   this.title = $event.title;
+  //   this.details = $event.details;
+  //   this.imageurl = $event.imageurl;
+  //   this.link = $event.link;
+  //   this.boolBgColor = $event.boolBgColor;
+  // }
+  
+  constructor() {
+    
   }
+
+ ngAfterViewInit() {
+   
+ }
+
 }
