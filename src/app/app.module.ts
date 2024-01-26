@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent} from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { PostlistComponent } from './postlist/postlist.component';
+import { PostformComponent } from './postform/postform.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PostComponent,
-    PostlistComponent
+    PostlistComponent,
+    PostformComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
