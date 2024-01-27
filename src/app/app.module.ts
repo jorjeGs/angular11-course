@@ -11,8 +11,10 @@ import { PostformComponent } from './postform/postform.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { DirectiveTaskComponent } from './directive-task/directive-task.component';
 import { PipesPracticeComponent } from './pipes-practice/pipes-practice.component';
-import { AppendCLIPipe } from './Pipes/append-cli.pipe';
+import { AppendCLIPipe } from './Pipes/append-cli.pipe'; // <-- import the pipe
 import { SummaryPipe } from './Pipes/summary.pipe';
+import { UserService } from './Services/user.service'; // <-- import the service
+import { ServicesComponent } from './serviceTutorial/services.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,16 @@ import { SummaryPipe } from './Pipes/summary.pipe';
     DirectivesComponent,
     DirectiveTaskComponent,
     PipesPracticeComponent,
-    AppendCLIPipe,
-    SummaryPipe
+    AppendCLIPipe, // <-- include it in our NgModule
+    SummaryPipe, // <-- include it in our NgModule
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule // <-- import the FormsModule before binding with [(ngModel)]
   ],
-  providers: [],
+  providers: [UserService], // <-- register the service as a provider
   bootstrap: [AppComponent]
 })
 export class AppModule { }
