@@ -1,0 +1,27 @@
+<section class="user-form">
+    <form action="">
+        <div class="group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" #userName>
+        </div>
+        <button type="submit" (click)="createUser(userName.value)">Add User</button>
+    </form>
+</section>
+<section *ngIf="users.length > 0; then userData else noUsers">
+</section>
+
+<ng-template #userData>
+    <section class="user-list">
+        <ul>
+            <li *ngFor="let user of users; let i = index">
+                {{ i + 1}} {{ user.name }}
+            </li>
+        </ul>
+    </section>
+</ng-template>
+
+<ng-template #noUsers>
+    <section class="user-list"> 
+        <h2>No Users Found</h2>
+    </section>
+</ng-template>
