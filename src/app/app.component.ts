@@ -1,12 +1,14 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { PostComponent } from './post/post.component';
+import { Observable } from 'rxjs'; // <-- import Observable in order to use it 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements OnInit{
 
   //FIRST PART
   //DATA, CLASS AND EVENT BINDING, CHILD-PARENT PARENT-CHILD COMMUNICATION, COMPONENTS BASICS
@@ -65,12 +67,32 @@ export class AppComponent implements AfterViewInit{
   //   this.boolBgColor = $event.boolBgColor;
   // }
   
-  constructor() {
+  constructor(private router : Router) {
     
   }
 
- ngAfterViewInit() {
-   
- }
+  ngOnInit(): void {
+    //create an observable
+    const observable = new Observable(observer => {
+      //observable execution with next
+      //this will be executed when we subscribe to the observable
+      observer.next('Hello from a Observable!');
+      observer.next('How are you?');
+      observer.next('I am fine');
+    //with subscribe we can subscribe to the observable
+    //we can pass 3 functions as parameters
+    //1. next function
+    //2. error function
+    //3. complete function
+  }).subscribe(value => console.log(value));
+}
 
+onSubmit() {
+  //simple navigation
+  //this.router.navigate(['/'])
+  //navigation with query parameters
+  //this.router.navigate(['/entrylist'], { queryParams: { page: 1, orderBy: 'newest' } });
+  //navigation with route parameters
+  //this.router.navigate(['/entry', 1, 'title'])
+}
 }

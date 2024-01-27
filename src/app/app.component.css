@@ -13,3 +13,9 @@
     align-items: center;
     gap: 10px;
 }
+
+.active{
+    color: red;
+    font-weight: bold;
+    background-color: yellow;
+}

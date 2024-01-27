@@ -15,6 +15,10 @@ import { AppendCLIPipe } from './Pipes/append-cli.pipe'; // <-- import the pipe
 import { SummaryPipe } from './Pipes/summary.pipe';
 import { UserService } from './Services/user.service'; // <-- import the service
 import { ServicesComponent } from './serviceTutorial/services.component';
+import { EntryComponent } from './entry/entry.component';
+import { EntrylistComponent } from './entrylist/entrylist.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component'; // <-- import the module for routing
 
 @NgModule({
   declarations: [
@@ -28,12 +32,12 @@ import { ServicesComponent } from './serviceTutorial/services.component';
     PipesPracticeComponent,
     AppendCLIPipe, // <-- include it in our NgModule
     SummaryPipe, // <-- include it in our NgModule
-    ServicesComponent
+    ServicesComponent, EntryComponent, EntrylistComponent, HomeComponent, NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule // <-- import the FormsModule before binding with [(ngModel)]
+    FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
   ],
   providers: [UserService], // <-- register the service as a provider
   bootstrap: [AppComponent]
