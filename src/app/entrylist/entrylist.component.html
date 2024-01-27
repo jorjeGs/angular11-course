@@ -1,0 +1,5 @@
+<div *ngFor="let entry of entryList; let i = index">
+    <h1>{{entry.title}}</h1>
+    <button [routerLink]="['/entry', i + 1, entry.title]">View Content</button>
+    <hr>
+</div>
